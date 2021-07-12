@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Nave1
+comment1.params=Espacio
+comment1.target=void\ addtoworld(greenfoot.World)
+comment2.params=
+comment2.target=void\ mover()
+comment3.params=
+comment3.target=void\ act()
+numComments=4
