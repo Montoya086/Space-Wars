@@ -12,7 +12,7 @@ public class Espacio extends World
         else jd=20;
         if(jd==1){
             int r=Greenfoot.getRandomNumber(getHeight());
-            addObject(new Nave2(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, r);
+            addObject(new Asteroide(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, r);
         }
     }
 }

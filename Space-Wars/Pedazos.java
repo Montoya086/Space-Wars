@@ -10,7 +10,7 @@ public class Pedazos extends Actor
     public void addtoworld(World Espacio){
         bx=-5+Greenfoot.getRandomNumber(10);
         by=-5+Greenfoot.getRandomNumber(10);
-        rt=-10+Greenfoot.getRandomNumber(10);
+        rt=-10+Greenfoot.getRandomNumber(20);
         if(bx==0)bx=1;
         if(by==0)by=1;
     }

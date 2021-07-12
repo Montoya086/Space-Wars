@@ -7,6 +7,10 @@ public class Disparo extends Actor
     {
         if(!remove){
             setLocation(getX()+v,getY());
+            Actor actor=getOneIntersectingObject(Asteroide.class);
+            if(actor!=null){
+                ((Asteroide)actor).destruir();
+            }
             if(getX()>getWorld().getWidth()+200)remove=true;
         }else{
             getWorld().removeObject(this);

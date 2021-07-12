@@ -1,7 +1,5 @@
 #BlueJ class context
 comment0.target=Explosion
-comment1.params=Espacio
-comment1.target=void\ addtoworld(greenfoot.World)
-comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment1.params=
+comment1.target=void\ act()
+numComments=2

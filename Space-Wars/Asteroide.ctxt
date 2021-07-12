@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.target=Nave2
+comment0.target=Asteroide
 comment1.params=
-comment1.target=Nave2()
+comment1.target=Asteroide()
 comment2.params=b
-comment2.target=Nave2(int)
+comment2.target=Asteroide(int)
 comment3.params=Espacio
 comment3.target=void\ addtoworld(greenfoot.World)
 comment4.params=
