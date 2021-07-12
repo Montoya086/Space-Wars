@@ -7,7 +7,7 @@ public class Pedazos extends Actor
         imag.drawImage(image,-Greenfoot.getRandomNumber(image.getWidth()),-Greenfoot.getRandomNumber(image.getHeight()));
         setImage(imag);
     }
-    public void addtoworld(World Espacio){
+    public void addedToWorld(World Espacio){
         bx=-5+Greenfoot.getRandomNumber(10);
         by=-5+Greenfoot.getRandomNumber(10);
         rt=-10+Greenfoot.getRandomNumber(20);
