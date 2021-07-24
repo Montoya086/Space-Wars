@@ -4,11 +4,11 @@ public class Nave1 extends Actor
     private int objtx=0,objty=0;
     private int jd=0;
     private boolean remove=false;
-    public void addedToWorld(World Espacio){
+    public void addedToWorld(World Espacio){//se obtienen las coordenadas cuando se alñade al mundo
         objtx=getX();
         objty=getY();
     }
-    public void mover(){
+    public void mover(){ // Se mueve con el movimiento del mouse
         double rx=objtx-getX();
         double ry=objty-getY();
         double r=Math.sqrt(rx*rx+ry*ry);
@@ -24,7 +24,7 @@ public class Nave1 extends Actor
         }
         setLocation(posx,posy);
     }
-    public void destruir(){ //Animación y accion de destruir naves enemigas
+    public void destruir(){ //Animación y accion de destruir 
         for(int i=0;i<10;i++){
             int px=-20+Greenfoot.getRandomNumber(40);
             int py=-20+Greenfoot.getRandomNumber(40);            
@@ -41,13 +41,14 @@ public class Nave1 extends Actor
             objty=mouse.getY();
             
         }
-        if(!remove)
+        if(!remove)//si no se ha destruido, puede seguir moviendose y disparando
             mover();
             else
             getWorld().removeObject(this);
-            if(jd>0)jd--;
-            if(jd==1)getWorld().addObject(new Disparo(),getX()+100,getY());
-            if(jd==0)jd=80;
+            if("space".equals(Greenfoot.getKey())){//disparos
+                getWorld().addObject(new Disparo(),getX()+100,getY());
+            }
+            
         
     }    
 }

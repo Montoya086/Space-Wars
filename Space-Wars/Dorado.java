@@ -1,13 +1,21 @@
-import greenfoot.*;
-public class Asteroide extends Actor
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Dorado here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Dorado extends Actor
 {
     private int bx=0; 
     private int r;
     private boolean remove=false;
-    public Asteroide(){
+    private int cont=0;
+    public Dorado(){
         
     }
-    public Asteroide(int b){
+    public Dorado(int b){
         bx=b;
     }
     public void addedToWorld(World Espacio){ //añadir al mundo
@@ -22,15 +30,20 @@ public class Asteroide extends Actor
         if(getX()<-200)remove=true;
     }
     public void destruir(){ //Animación y accion de destruir naves enemigas
+        if(cont>=4){
         for(int i=0;i<10;i++){
             int px=-20+Greenfoot.getRandomNumber(40);
-            int py=-20+Greenfoot.getRandomNumber(40);            
+            int py=-20+Greenfoot.getRandomNumber(40);           
             getWorld().addObject(new Pedazos(getImage()),getX()+px,getY()+py);
         }
         getWorld().addObject(new Explosion(),getX(),getY());
         remove=true;
         Espacio juego = (Espacio) getWorld();
-        juego.aumentar_puntuacion(1);
+        juego.aumentar_puntuacion(10);
+    }
+    else{
+        cont++;
+    }
     }
     public void act() 
     {
@@ -44,5 +57,5 @@ public class Asteroide extends Actor
             mover();
         else
             getWorld().removeObject(this);
-    }    
+    }  
 }

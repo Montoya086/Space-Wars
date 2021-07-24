@@ -15,12 +15,23 @@ public class Espacio extends World
         if (jd>0)jd--;
         else jd=20;
         if(jd==1){
-            int r=Greenfoot.getRandomNumber(getHeight());
-            addObject(new Asteroide(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, r);
+            addObject(new Asteroide(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, Greenfoot.getRandomNumber(getHeight()));
+            int r2=Greenfoot.getRandomNumber(100);
+            if(r2>=0 && r2<=10){
+                addObject(new Plateado(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, Greenfoot.getRandomNumber(getHeight()));
+            }
+            int r3=Greenfoot.getRandomNumber(200);
+            if(r3>=0 && r3<=10){
+                addObject(new Dorado(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, Greenfoot.getRandomNumber(getHeight()));
+            }
+            int r4=Greenfoot.getRandomNumber(400);
+            if(r4>=0 && r4<=10){
+                addObject(new Diamante(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, Greenfoot.getRandomNumber(getHeight()));
+            }
         }
     }
-    public void aumentar_puntuacion(){
-        cont++;
+    public void aumentar_puntuacion(int cant){
+        cont+=cant;
         contador.add(cont); 
     }
 }
