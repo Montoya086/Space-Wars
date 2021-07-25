@@ -35,7 +35,7 @@ public class Nave1 extends Actor
     }
     public void act() 
     {
-        if(Greenfoot.mouseMoved(null)){
+        if(Greenfoot.mouseMoved(null)){ // detección de la posicion del mouse
             MouseInfo mouse=Greenfoot.getMouseInfo();
             objtx=mouse.getX();
             objty=mouse.getY();

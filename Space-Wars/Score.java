@@ -8,7 +8,7 @@ public class Score extends Actor
     public Score(){
         this("");
     }
-    public Score(String text){
+    public Score(String text){ // inicialización del score
         texto=text;
         largo = (text.length() + 2) * 16;
 
@@ -24,10 +24,10 @@ public class Score extends Actor
     {
         updateImage();
     }
-    public void add(int score){
+    public void add(int score){//score
         valor = score;
     }
-    private void updateImage(){
+    private void updateImage(){ //actualización del score
         GreenfootImage imagen=getImage();
         imagen.clear();
         imagen.drawString(texto+valor,1,18);

@@ -21,7 +21,7 @@ public class Diamante extends Actor
     public void addedToWorld(World Espacio){ //añadir al mundo
         setRotation(180);
     }
-    public void mover(){   // movimiento de los enemigos
+    public void mover(){   // movimiento de los asteroides
         setLocation(getX()+bx,getY());
         Actor actor = getOneIntersectingObject(Nave1.class);
         if(actor!=null){
@@ -29,8 +29,8 @@ public class Diamante extends Actor
         }
         if(getX()<-200)remove=true;
     }
-    public void destruir(){ //Animación y accion de destruir naves enemigas
-        if(cont>=6){
+    public void destruir(){ //Animación y accion de destruir asteroide
+        if(cont>=6){//contador de vidas
         for(int i=0;i<10;i++){
             int px=-20+Greenfoot.getRandomNumber(40);
             int py=-20+Greenfoot.getRandomNumber(40);           
@@ -47,13 +47,13 @@ public class Diamante extends Actor
     }
     public void act() 
     {
-        if(r>0)
+        if(r>0)//timer de rotaciónes del asteroide
             r--;
         if(r==1)
             setRotation(getRotation()+Greenfoot.getRandomNumber(360));
         if(r==0) 
             r=10;
-        if(!remove)
+        if(!remove)//detección de colisión
             mover();
         else
             getWorld().removeObject(this);
