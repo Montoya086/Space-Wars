@@ -30,13 +30,16 @@ public class Dorado extends Actor
         if(getX()<-200)remove=true;
     }
     public void destruir(){ //Animación y accion de destruir asteroides
-        if(cont>=4){//contador de la vida del asteroide
+        if(cont>=5){//contador de la vida del asteroide
         for(int i=0;i<10;i++){
             int px=-20+Greenfoot.getRandomNumber(40);
             int py=-20+Greenfoot.getRandomNumber(40);           
             getWorld().addObject(new Pedazos(getImage()),getX()+px,getY()+py);
         }
         getWorld().addObject(new Explosion(),getX(),getY());
+        GreenfootSound explosion = new GreenfootSound("Explosion.wav");
+        explosion.setVolume(70);
+        explosion.play();
         remove=true;
         Espacio juego = (Espacio) getWorld();
         juego.aumentar_puntuacion(10);

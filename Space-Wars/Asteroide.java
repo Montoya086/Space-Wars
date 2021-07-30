@@ -28,6 +28,9 @@ public class Asteroide extends Actor
             getWorld().addObject(new Pedazos(getImage()),getX()+px,getY()+py);
         }
         getWorld().addObject(new Explosion(),getX(),getY());
+        GreenfootSound explosion = new GreenfootSound("Explosion.wav");
+        explosion.setVolume(70);
+        explosion.play();
         remove=true;
         Espacio juego = (Espacio) getWorld();
         juego.aumentar_puntuacion(1);//aumento de la puntuación

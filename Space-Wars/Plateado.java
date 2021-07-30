@@ -30,13 +30,16 @@ public class Plateado extends Actor
         if(getX()<-200)remove=true;
     }
     public void destruir(){ //Animación y accion de destruir asteroide
-        if(cont>=2){//contador de vidas
+        if(cont>=3){//contador de vidas
         for(int i=0;i<10;i++){
             int px=-20+Greenfoot.getRandomNumber(40);
             int py=-20+Greenfoot.getRandomNumber(40);            
             getWorld().addObject(new Pedazos(getImage()),getX()+px,getY()+py);
         }
         getWorld().addObject(new Explosion(),getX(),getY());
+        GreenfootSound explosion = new GreenfootSound("Explosion.wav");
+        explosion.setVolume(70);
+        explosion.play();
         remove=true;
         Espacio juego = (Espacio) getWorld();
         juego.aumentar_puntuacion(5);

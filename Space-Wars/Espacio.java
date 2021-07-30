@@ -4,6 +4,8 @@ public class Espacio extends World
     private int jd=0;
     private Score contador;
     private int cont=0;
+    GreenfootSound m = new GreenfootSound("Musica.wav");
+    private boolean bandera=true;
     public Espacio()
     {    
         super(960, 600, 1,false);
@@ -27,7 +29,11 @@ public class Espacio extends World
             int r4=Greenfoot.getRandomNumber(400);
             if(r4>=0 && r4<=10){//probabilidad de asteroide plateado 10/400
                 addObject(new Diamante(-(2+Greenfoot.getRandomNumber(3))),getWidth()+200, Greenfoot.getRandomNumber(getHeight()));
-            }
+            }            
+        }
+        if(bandera==true){
+        m.playLoop();
+        bandera=false;
         }
     }
     public void aumentar_puntuacion(int cant){//funcion de aumento de puntuación
